@@ -1,0 +1,534 @@
+[
+    {
+        "id": "05bf0bd91142ef89",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "fe123e792259f077",
+        "type": "arduino-board",
+        "device": "COM3"
+    },
+    {
+        "id": "6af316018e65fb80",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#00588f",
+                "baseFont": "Century Gothic,CenturyGothic,AppleGothic,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#00588f",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#00588f",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0087db",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#00588f",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "Century Gothic,CenturyGothic,AppleGothic,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "grey",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Projeto de dispenser de ração",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "true",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 128,
+                "sy": 128,
+                "gx": 12,
+                "gy": 12,
+                "cx": 12,
+                "cy": 12,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "d1c8135f5fb0a552",
+        "type": "ui_tab",
+        "name": "Informações",
+        "icon": "Dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e2745c04109ce9cf",
+        "type": "ui_group",
+        "name": "Porcentagem do recipiente",
+        "tab": "d1c8135f5fb0a552",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3eef7ab13dc861ca",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "c39fef4219ec0f6a",
+        "type": "ui_spacer",
+        "z": "05bf0bd91142ef89",
+        "name": "spacer",
+        "group": "e2745c04109ce9cf",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "a90c65ec9e0d771b",
+        "type": "debug",
+        "z": "05bf0bd91142ef89",
+        "name": "Firmata",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "900fcb4aaaff074d",
+        "type": "ui_gauge",
+        "z": "05bf0bd91142ef89",
+        "name": "Dashboard do Recipiente",
+        "group": "e2745c04109ce9cf",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "gtype": "gage",
+        "title": "Recipiente",
+        "label": "%",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "25",
+        "seg2": "75",
+        "className": "",
+        "x": 1130,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "2c030a203365b824",
+        "type": "delay",
+        "z": "05bf0bd91142ef89",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "30",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 920,
+        "y": 240,
+        "wires": [
+            [
+                "1553ba68bc8248f6"
+            ]
+        ]
+    },
+    {
+        "id": "7b7ed14d386a18bc",
+        "type": "delay",
+        "z": "05bf0bd91142ef89",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "3",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1040,
+        "y": 700,
+        "wires": [
+            [
+                "df347e32c0b409b3"
+            ]
+        ]
+    },
+    {
+        "id": "568be713d0858a6a",
+        "type": "arduino out",
+        "z": "05bf0bd91142ef89",
+        "name": "Servo: PIN 9",
+        "pin": "9",
+        "state": "SERVO",
+        "arduino": "fe123e792259f077",
+        "x": 1430,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "df347e32c0b409b3",
+        "type": "function",
+        "z": "05bf0bd91142ef89",
+        "name": "Fechar",
+        "func": "msg.payload = \"90\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1260,
+        "y": 700,
+        "wires": [
+            [
+                "568be713d0858a6a"
+            ]
+        ]
+    },
+    {
+        "id": "0a3018d30bb3818f",
+        "type": "delay",
+        "z": "05bf0bd91142ef89",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "10",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 680,
+        "y": 640,
+        "wires": [
+            [
+                "ef3c81068ea5a1cc"
+            ]
+        ]
+    },
+    {
+        "id": "ef3c81068ea5a1cc",
+        "type": "function",
+        "z": "05bf0bd91142ef89",
+        "name": "Abrir",
+        "func": "msg.payload = \"180\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 640,
+        "wires": [
+            [
+                "7b7ed14d386a18bc",
+                "e7f46eeeedb0d68f"
+            ]
+        ]
+    },
+    {
+        "id": "e7f46eeeedb0d68f",
+        "type": "arduino out",
+        "z": "05bf0bd91142ef89",
+        "name": "Servo: PIN 9",
+        "pin": "9",
+        "state": "SERVO",
+        "arduino": "fe123e792259f077",
+        "x": 1050,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "daa2c795df9ac299",
+        "type": "arduino in",
+        "z": "05bf0bd91142ef89",
+        "name": "Trigger: Pin 12",
+        "pin": "12",
+        "state": "INPUT",
+        "arduino": "fe123e792259f077",
+        "x": 640,
+        "y": 220,
+        "wires": [
+            [
+                "2c030a203365b824"
+            ]
+        ]
+    },
+    {
+        "id": "1614a938b1914ddd",
+        "type": "arduino in",
+        "z": "05bf0bd91142ef89",
+        "name": "Echo: Pin 11",
+        "pin": "11",
+        "state": "INPUT",
+        "arduino": "fe123e792259f077",
+        "x": 650,
+        "y": 280,
+        "wires": [
+            [
+                "2c030a203365b824"
+            ]
+        ]
+    },
+    {
+        "id": "1553ba68bc8248f6",
+        "type": "function",
+        "z": "05bf0bd91142ef89",
+        "name": "Calculador de porcentagem",
+        "func": "msg.payload = msg.payload/10;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 440,
+        "wires": [
+            [
+                "a90c65ec9e0d771b",
+                "900fcb4aaaff074d",
+                "0a3018d30bb3818f"
+            ]
+        ]
+    },
+    {
+        "id": "07e2b6946504f2bb",
+        "type": "comment",
+        "z": "05bf0bd91142ef89",
+        "name": "Fluxo de abrir e fechar dispenser",
+        "info": "",
+        "x": 390,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "f002bec6c976b5e3",
+        "type": "comment",
+        "z": "05bf0bd91142ef89",
+        "name": "Fluxo de mensagem e calculo",
+        "info": "",
+        "x": 400,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "4c34a475174bb616",
+        "type": "comment",
+        "z": "05bf0bd91142ef89",
+        "name": "Fluxo de entrada do sensor",
+        "info": "",
+        "x": 410,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "8e39c6a7c0fff22a",
+        "type": "mqtt in",
+        "z": "05bf0bd91142ef89",
+        "name": "",
+        "topic": "Dispenser/abrir",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "3eef7ab13dc861ca",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1180,
+        "y": 860,
+        "wires": [
+            [
+                "0a3018d30bb3818f"
+            ]
+        ]
+    },
+    {
+        "id": "01cdf8c24f85090e",
+        "type": "comment",
+        "z": "05bf0bd91142ef89",
+        "name": "Fluxo de MQTT para abertura de dispenser",
+        "info": "",
+        "x": 360,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "30bdb9e87e1c8b4c",
+        "type": "mqtt out",
+        "z": "05bf0bd91142ef89",
+        "name": "",
+        "topic": "Dispenser/abrir",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "3eef7ab13dc861ca",
+        "x": 900,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "4bbb79d4e399f252",
+        "type": "aedes broker",
+        "z": "05bf0bd91142ef89",
+        "name": "",
+        "mqtt_port": 1883,
+        "mqtt_ws_bind": "port",
+        "mqtt_ws_port": "",
+        "mqtt_ws_path": "",
+        "cert": "",
+        "key": "",
+        "certname": "",
+        "keyname": "",
+        "dburl": "",
+        "usetls": false,
+        "x": 690,
+        "y": 920,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "8afdda4814b7fb75",
+        "type": "ui_button",
+        "z": "05bf0bd91142ef89",
+        "name": "",
+        "group": "e2745c04109ce9cf",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Dispensar ração",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "payload",
+        "topicType": "msg",
+        "x": 680,
+        "y": 860,
+        "wires": [
+            [
+                "30bdb9e87e1c8b4c"
+            ]
+        ]
+    }
+]
